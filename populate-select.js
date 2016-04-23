@@ -6,7 +6,7 @@
 (function ($) {
 
     $('select[data-source]').each(function () {
-        $this = $(this);
+        var $this = $(this);
         var remoteJSON = $this.attr('data-source');
         $.getJSON(remoteJSON, function (data) {
             $.each(data, function (optionValue, optionText) {
@@ -14,7 +14,6 @@
                 $this.append('<option value="' + optionValue + '" ' + selected + '>' + optionText + '</option>');
             });
         });
-
     });
 
 })(jQuery);
